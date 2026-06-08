@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Baffour Gyimah — Junior Full-Stack Developer</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <div id="main-header">
+            <h1>Baffour Kwabena Gyimah</h1>
+            <h2>Junior Full-Stack Developer</h2>
+
+            <div id="about">
+                <p>Self-taught full-stack developer with two deployed production applications built using React, Node.js, Express, and PostgreSQL. Experienced in implementing user authentication, RESTful API design, database management, and data visualisation with Chart.js. Holds an MSc in Environmental Management and brings strong analytical thinking, attention to detail, and a proven ability to learn quickly. Actively seeking a junior developer role to contribute and grow within a collaborative team.</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <div class="links-jnr">
+                <h3>Email</h3>
+                <p><a href="mailto:baffourkgyimah.code@gmail.com" target="_blank">baffourkgyimah.code@gmail.com</a></p>
+            </div>
+            
+            <div class="links-jnr">
+                <h3>Github</h3>
+                <p><a href="https://github.com/Baffyy" target="_blank">github.com/Baffyy</a></p>
+            </div>
+
+            <div class="links-jnr">
+                <h3>Linkedin</h3>
+                <p><a href="https://linkedin.com/in/baffour-kwabena-gyimah" target="_blank">linkedin.com/in/baffour-kwabena-gyimah</a></p>
+            </div>
+        </div>
+
+        <div id="projects">
+            <div class="project">
+                <h2>Task Manager</h2>
+                
+                <div class="about">
+                    <p>A full-stack task management application with user authentication, persistent data storage, and a dynamic React frontend. Built with Node.js, Express, PostgreSQL, and React. Implements login/register/logout, sessions stored in PostgreSQL, full CRUD functionality, and a protected REST API connected to the frontend via Axios.</p>
+                    <h3>Live: <span><a href="https://task-manager-fibo.onrender.com" target="_blank">https://task-manager-fibo.onrender.com</a></span></h3>
+                    <h3>Code: <span><a href="https://github.com/Baffyy/Task__Manager" target="_blank">github.com/Baffyy/Task__Manager</a></span></h3>
+                </div>
+
+                <div class="images">
+                    <img src="./images/task_manager_login.png" alt="Task Manager login page">
+                    <img src="./images/task_manager_dashboard.png" alt="Task Manager dashboard">
+                </div>
+            </div>
+
+            <div class="project">
+                <h2>Expense Tracker</h2>
+
+                <div class="about">
+                    <p>A full-stack expense tracking application with income/expense logging, live summary cards, and a doughnut chart showing spending by category. Uses SQL GROUP BY and SUM for data aggregation, Chart.js for visualisation, and is deployed with a Neon PostgreSQL database.</p>
+                    <h3>Live: <span><a href="https://expense-tracker-kv1h.onrender.com" target="_blank">https://expense-tracker-kv1h.onrender.com</a></span></h3>
+                    <h3>Code: <span><a href="https://github.com/Baffyy/Expense_Tracker" target="_blank">github.com/Baffyy/Expense_Tracker</a></span></h3>
+                </div>
+
+                <div class="images">
+                    <img src="./images/expense_login.png" alt="Expense Tracker login page">
+                    <img src="./images/expense_dash.png" alt="Expense Tracker dashboard with chart">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="taskbar"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2,'0');
+            const m = String(now.getMinutes()).padStart(2,'0');
+            document.querySelector('.taskbar').setAttribute('data-time', h + ':' + m);
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #008080;
+  --win-bg:     #c0c0c0;
+  --win-title:  #000080;
+  --win-text:   #ffffff;
+  --text:       #000000;
+  --shadow-out: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff, inset -2px -2px 0 #404040, inset 2px 2px 0 #dfdfdf;
+  --shadow-in:  inset 1px 1px 0 #808080, inset -1px -1px 0 #ffffff, inset 2px 2px 0 #404040, inset -2px -2px 0 #dfdfdf;
+  --vt:         'VT323', monospace;
+  --pixel:      'Press Start 2P', monospace;
+  --mono:       'Share Tech Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--vt);
+  font-size: 20px;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  padding: 20px 20px 60px;
+}
+
+/* ── TASKBAR ───────────────────────────────────── */
+.taskbar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 36px;
+  background: var(--win-bg);
+  box-shadow: var(--shadow-out);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+  z-index: 1000;
+}
+
+.taskbar::before {
+  content: '⊞ START';
+  font-family: var(--pixel);
+  font-size: 8px;
+  font-weight: bold;
+  background: var(--win-bg);
+  box-shadow: var(--shadow-out);
+  padding: 5px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.taskbar::after {
+  content: '📁 portfolio.exe';
+  font-family: var(--mono);
+  font-size: 13px;
+  background: var(--win-bg);
+  box-shadow: var(--shadow-in);
+  padding: 3px 12px;
+  min-width: 160px;
+}
+
+.main-container {
+  /* max-width: 900px; */
+  margin: 0 auto;
+  background: var(--win-bg);
+  box-shadow: var(--shadow-out);
+}
+
+.main-container::before {
+  content: '👨‍💻  Baffour Kwabena Gyimah — Junior Full-Stack Developer';
+  display: flex;
+  align-items: center;
+  background: var(--win-title);
+  color: var(--win-text);
+  font-family: var(--pixel);
+  font-size: 8px;
+  padding: 5px 8px;
+  letter-spacing: 0.5px;
+}
+
+.main-container::after {
+  content: 'File    View    Projects    Contact    Help';
+  display: flex;
+  font-family: var(--vt);
+  font-size: 18px;
+  background: var(--win-bg);
+  border-bottom: 1px solid #808080;
+  padding: 2px 8px;
+  gap: 20px;
+}
+
+#main-header {
+  padding: 20px;
+  border-bottom: 2px solid #808080;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  background: var(--win-bg);
+  box-shadow: var(--shadow-in);
+  margin: 10px;
+}
+
+#main-header h1 {
+  font-family: var(--pixel);
+  font-size: 13px;
+  color: var(--win-title);
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+#main-header h2 {
+  font-family: var(--mono);
+  font-size: 18px;
+  color: #006600;
+  font-weight: normal;
+}
+#main-header h2::before { content: '> '; }
+
+#about {
+  background: var(--win-bg);
+  box-shadow: var(--shadow-in);
+  padding: 12px 16px;
+  max-width: 640px;
+  text-align: left;
+  position: relative;
+}
+
+#about::before {
+  content: '📄 about_me.txt';
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--win-title);
+  color: white;
+  margin: -12px -16px 10px -16px;
+  padding: 3px 8px;
+}
+
+#about p {
+  font-family: var(--vt);
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #808080;
+}
+
+.links-jnr {
+  background: var(--win-bg);
+  box-shadow: var(--shadow-out);
+  padding: 8px 16px;
+  text-align: center;
+  min-width: 160px;
+  position: relative;
+}
+
+.links-jnr::before {
+  content: '';
+  display: block;
+  background: var(--win-title);
+  height: 4px;
+  margin: -8px -16px 8px -16px;
+}
+
+.links-jnr h3 {
+  font-family: var(--pixel);
+  font-size: 8px;
+  color: var(--win-title);
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
+.links-jnr a {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #0000cc;
+  text-decoration: underline;
+}
+.links-jnr a:hover { color: var(--win-title); }
+
+
+#projects {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#projects::before {
+  content: '📁 MY PROJECTS  (2 objects)';
+  font-family: var(--pixel);
+  font-size: 8px;
+  color: var(--text);
+  display: block;
+  padding: 4px 0 8px;
+  border-bottom: 1px solid #808080;
+}
+
+.project {
+  background: var(--win-bg);
+  box-shadow: var(--shadow-out);
+  display: flex;
+  flex-direction: column;
+}
+
+/* project titlebar */
+.project h2 {
+  background: var(--win-title);
+  color: white;
+  font-family: var(--pixel);
+  font-size: 9px;
+  padding: 5px 10px;
+  letter-spacing: 0.5px;
+}
+.project h2::before { content: '📁  '; }
+
+.about {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about p {
+  font-family: var(--vt);
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--text);
+  background: white;
+  box-shadow: var(--shadow-in);
+  padding: 8px 10px;
+}
+
+.about h3 {
+  font-family: var(--pixel);
+  font-size: 8px;
+  font-weight: normal;
+  color: var(--text);
+}
+
+.about h3 span a {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: #0000cc;
+  text-decoration: underline;
+}
+.about h3 span a:hover { color: var(--win-title); }
+
+.images {
+  display: flex;
+  gap: 10px;
+  padding: 0 14px 14px;
+  flex-wrap: wrap;
+}
+
+.images img {
+  width: calc(50% - 5px);
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  box-shadow: var(--shadow-in);
+  border: none;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.images img:hover {
+  filter: brightness(1.05) saturate(1.1);
+  box-shadow: var(--shadow-out);
+}
+
+.images img::before {
+  content: 'screenshot.png';
+}
+
+.main-container > *:last-child {
+  border-top: 1px solid #808080;
+}
+
+#projects::after {
+  content: '✅ 2 projects   |   📍 London, UK   |   💼 Open to work';
+  display: block;
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 5px 8px;
+  box-shadow: var(--shadow-in);
+  background: var(--win-bg);
+  margin-top: 10px;
+  border-top: 1px solid #808080;
+}
+
+::-webkit-scrollbar { width: 16px; }
+::-webkit-scrollbar-track { background: var(--win-bg); box-shadow: var(--shadow-in); }
+::-webkit-scrollbar-thumb { background: var(--win-bg); box-shadow: var(--shadow-out); }
+::-webkit-scrollbar-button { background: var(--win-bg); box-shadow: var(--shadow-out); height: 16px; }
+
+@media (max-width: 600px) {
+  body { padding: 10px 10px 56px; }
+  #main-header h1 { font-size: 9px; }
+  .links { flex-direction: column; align-items: center; }
+  .images img { width: 100%; height: auto; }
+  .links-jnr { min-width: 260px; }
+}
+
+.taskbar[data-time]::after {
+  content: attr(data-time);
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 3px 10px;
+  box-shadow: var(--shadow-in);
+  background: var(--win-bg);
+  margin-left: auto;
+}
